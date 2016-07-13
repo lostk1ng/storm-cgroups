@@ -1,11 +1,11 @@
 # Storm-CGroups
 
-## Purpose
+## purpose
 
 * Add storm worker to cpu cgroups by crontab, in order to limit the max CPU% usage for each worker in storm. When a worker process die(often trigger by kill or rebalance command), it will automatically remove the unused cgroups.
 * When a worker process CPU% reach the limit, will trigger alarm.
 
-## Code   
+## code   
 	.
 	├── README.md
 	└── shell
@@ -14,7 +14,7 @@
 	    ├── stormcpualarmd.sh              # alarm shell
 	    └── stormcpud.sh                   # add worker process to cpu cgroups shell
 
-## Deploy
+## deploy
 
 * When deploy on server side, please use crontab with shell script `stormcpud.sh` and `stormcpualarmd.sh`.
 * Specify Params: `stormcpud.sh` can specify max CPU% usage for each worker(default to 50%), `stormcpualarmd.sh` can specify alarm threshold(default to 80%).
